@@ -6,8 +6,8 @@ import "./MyToken.sol";
 contract FactoryMyToken {
     event MyTokenEvent(address myTokenAddress);
 
-    function deploy() external {
-        MyToken newToken = new MyToken("MyToken", "MTK");
+    function deploy(string memory name, string memory symbol) external {
+        MyToken newToken = new MyToken(name, symbol);
         
         emit MyTokenEvent(address(newToken));
     }
